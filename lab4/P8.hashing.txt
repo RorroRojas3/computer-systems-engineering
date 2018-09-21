@@ -1,0 +1,31 @@
+ECE 223 Spring 2017
+Programming Assignment 4
+Hashing
+
+Write a library that implements a table organized with hashing.  It should have the following interface:
+
+/* table.h */
+
+typedef void *data_t;
+
+typedef int key_t;
+
+typedef struct table *table_t; /* define struct table int table.c */
+
+table_t Table_new(int table_size); /* initialize the table */
+
+int Table_insert (table_t, key_t, data_t); /* insert one item */
+
+data_t Table_find (table_t, key_t); /* find an item with key */
+
+int Table_update(table_t, key_t, data_t); /* update item data in place */
+
+data_t Table_remove (table_t, key_t); /* remove one item */
+
+void Table_free (table_t *); /* free the entire table */
+
+/* end of table.h */
+
+Your data must be organized as a hash table using separate chaining.  Your implementation should use dynamic allocation (malloc and free).
+
+Test your library extensively – write a detailed description of your test plan.  As your final test measure the complexity of the insert, find, and remove by applying several million random inserts, finds, and removes, with random keys.   Turn in your code including the code for your test program, code description, test plan, and test results in hard copy, and your code electronically (including the test program). 
